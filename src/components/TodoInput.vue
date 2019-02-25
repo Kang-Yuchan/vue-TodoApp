@@ -4,14 +4,29 @@
         <span class="addContainer" @click="addTodo">
             <i class="fas fa-plus addBtn"></i>
         </span>
+
+        <Modal v-if="showModal" @close="showModal = false">
+            <h3 slot="header">
+                Warning!
+            </h3>
+            <h3 slot="body">
+                ToDoを入力し忘れていますよ！
+            </h3>
+            <h4 slot="footer">
+                Copyright &copy
+            </h4>
+        </Modal>
     </div>
 </template>
 
 <script>
+import Modal from './common/Modal.vue';
+
 export default {
     data() {
         return {
-            newTodoItem: ""
+            newTodoItem: "",
+            showModal: false
         }
     },
     methods: {
@@ -19,11 +34,16 @@ export default {
             if(this.newTodoItem !== '') {
                 this.$emit('addTodoItem', this.newTodoItem);
                 this.clearInput();
+            } else {
+                this.showModal = !this.showModal;
             }
         },
         clearInput() {
             this.newTodoItem = "";
         }
+    },
+    components: {
+        Modal: Modal
     }
 }
 </script>
