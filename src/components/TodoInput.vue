@@ -8,13 +8,11 @@
         <Modal v-if="showModal" @close="showModal = false">
             <h3 slot="header">
                 Warning!
+                <i class="closeModalBtn fas fa-times" @click="showModal = false"></i>
             </h3>
-            <h3 slot="body">
+            <div slot="body">
                 ToDoを入力し忘れていますよ！
-            </h3>
-            <h4 slot="footer">
-                Copyright &copy
-            </h4>
+            </div>
         </Modal>
     </div>
 </template>
@@ -73,6 +71,11 @@ input:focus {
     color: white;
     vertical-align: middle;
 
+}
+
+.closeModalBtn {
+    color: #42b983;
+    cursor: pointer;
 }
 
 </style>
