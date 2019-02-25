@@ -75,7 +75,7 @@ input:focus {
 
 .closeModalBtn {
     color: #42b983;
-    cursor: pointer;
+    cursor:  pointer;
 }
 
 </style>
