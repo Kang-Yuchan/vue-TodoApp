@@ -66,11 +66,11 @@ input:focus {
     display: block;
     width: 3rem;
     border-radius: 0 5px 5px 0;
+    cursor: pointer;
 }
 .addBtn {
     color: white;
     vertical-align: middle;
-
 }
 
 .closeModalBtn {
